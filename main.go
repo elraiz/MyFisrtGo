@@ -54,6 +54,6 @@ func isNumberDivisible(number int, divider int) {
 	if number%divider == 00 {
 		fmt.Println("number ", number, "is a multiple of ", divider)
 	} else {
-		fmt.Println("number ", number, "is a not multiple of ", divider)
+		fmt.Println("number ", number, " is a not multiple of ", divider)
 	}
 }

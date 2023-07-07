@@ -11,7 +11,11 @@ func main() {
 	var divider = 3
 
 	calculate(width, height)
-	isNumberPrime(number)
+	if isNumberPrime(number) {
+		fmt.Println("number ", number, " is a prime number")
+	} else {
+		fmt.Println("number ", number, " is not a prime number")
+	}
 	isNumberDivisible(number, divider)
 }
 
@@ -31,22 +35,18 @@ func calculate(width int, height int) {
 	}
 }
 
-func isNumberPrime(number int) {
+func isNumberPrime(number int) bool {
 	var divider int
 	if number < 3 {
-		fmt.Println("number ", number, " is a prime number")
+		return true
 	} else {
 		for i := 2; i <= number; i++ {
 			divider = i
-			if (number % i) == 0 {
+			if number%i == 0 {
 				break
 			}
 		}
-		if divider == number {
-			fmt.Println("number ", number, " is a prime number")
-		} else {
-			fmt.Println("number ", number, " is not a prime number")
-		}
+		return divider == number
 	}
 }
 

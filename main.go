@@ -7,7 +7,7 @@ import (
 func main() {
 	var width = 10
 	var height = 512
-	var number = 7
+	var number = 8
 	var divider = 3
 
 	calculate(width, height)
@@ -42,17 +42,20 @@ func calculate(width int, height int) {
 }
 
 func isNumberPrime(number int) bool {
-	var divider int
-	if number < 3 {
+	var i = 1
+	if number == 1 {
+		return false
+	}
+	if number > 1 && number < 3 {
 		return true
 	} else {
-		for i := 2; i <= number; i++ {
-			divider = i
+		for i <= number {
+			i++
 			if number%i == 0 {
 				break
 			}
 		}
-		return divider == number
+		return i == number
 	}
 }
 
